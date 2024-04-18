@@ -26,10 +26,12 @@ int main() {
 int find_row_index(int this_row) {
 
 
+
 	return 0;
 }
 
 int find_seat_index(char this_seat) {
+
 
 
 	return 0;
