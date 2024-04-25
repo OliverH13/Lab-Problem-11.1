@@ -6,9 +6,9 @@ using namespace std;
 const int ROWS = 13;
 const int COLUMNS = 8;
 
-int findRowIndex(int thisRow);
-int findSeatIndex(char thisSeat);
-void displaySeatColumn(char seats[][ROWS], int COLUMNS);
+int find_row_index(int thisRow);
+int find_seat_index(char thisSeat);
+void display_seat_column(char seats[][ROWS], int COLUMNS);
 
 int main(void) {
 
@@ -45,14 +45,14 @@ int main(void) {
 
 	while (true) {
 
-		displaySeatColumn(seats, COLUMNS);
+		display_seat_column(seats, COLUMNS);
 		cout << "Enter a seat or Q to quit: ";
 		cin >> thisRow >> thisSeat;
 
 		if (cin.fail()) break;
 
-		row = findRowIndex(thisRow);
-		column = findSeatIndex(thisSeat);
+		row = find_row_index(thisRow);
+		column = find_seat_index(thisSeat);
 
 		if (row == ROWS + 1 || column == COLUMNS + 1) {
 			cout << "Sorry, no such seat exists on the CRJ 200. " << endl;
@@ -69,14 +69,14 @@ int main(void) {
 	}
 }
 
-int findRowIndex(int thisRow) {
+int find_row_index(int thisRow) {
 	if (thisRow > 0 && thisRow <= ROWS) return thisRow - 1;
 	else {
 		return ROWS + 1;
 	}
 }
 
-int findSeatIndex(char thisSeat) {
+int find_seat_index(char thisSeat) {
 	if (thisSeat == 'D') return 0;
 	else if (thisSeat == 'C') return 1;
 	else if (thisSeat == 'B') return 6;
@@ -86,7 +86,7 @@ int findSeatIndex(char thisSeat) {
 	} 
 }
 
-void displaySeatColumn(char seats[][ROWS], int column) {
+void display_seat_column(char seats[][ROWS], int column) {
 	cout << endl;
 	for (int column = 0; column < COLUMNS; column++) {
 		for (int row = 0; row < ROWS; row++) {
